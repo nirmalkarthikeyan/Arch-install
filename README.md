@@ -64,10 +64,10 @@ This is just a list of instructions, not an executable file. Please don't downlo
 (type and retype)
 
 16)Create a new user:
-`# useradd -m -g users -G __all required permissions -s__ /bin/bash __username__`
+`# useradd -m -g users -G *all required permissions -s* /bin/bash *username*`
 
 17)Add a passwd for __username__
-`# passwd __username__`
+`# passwd *username*`
 
 18)Edit the sudo file to give required permissions:
 `# visudo`
@@ -83,15 +83,15 @@ Grab it from the repos:
 `# pacman -S grub efibootmgr fuse2 os-prober`
 
 Install GRUB: 
-`# grub-install --target=x86_64-efi --efi-directory=__esp__ --bootloader-id=__arch_grub__`
+`# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=*arch_grub*`
 Any id can be used, and esp is the path where the esp is mounted ie __/mnt/boot__ here.
 
 21)Generate a grub-config file.
-`# grub-mkconfig -o __esp__/grub/grub.cfg`
+`# grub-mkconfig -o *esp*/grub/grub.cfg`
 where __esp__ is 'mnt/boot' for me.
 
 22)Give a hostname:
-`# echo __preferredname__ > /etc/hostname`
+`# echo *preferredname* > /etc/hostname`
 
 23)Done! Exit chroot, unmount all drives and reboot!
 
