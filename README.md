@@ -8,28 +8,28 @@ This is just a list of instructions, not an executable file. Please don't downlo
 3) Format the root partition to a format linux supports, preferably ext4.
 
 4) Mount the root partition in the directory /mnt using the command 
-'# mount /dev/sdax /mnt'
+`# mount /dev/sdax /mnt`
 
 5) If using swap, initialize it using 
-'# mkswap /dev/sdxY'
-'# swapon /dev/sdxY'
+`# mkswap /dev/sdxY`
+`# swapon /dev/sdxY`
 
 6) Format the EFI partition (whose number we noted earlier using 'fdisk-l') to FAT32 by:
-'# mkfs.fat -F32 /dev/sdxY'
+`# mkfs.fat -F32 /dev/sdxY`
 
 7) Make a directory for the esp - /mnt/boot.
-'# mkdir -p /mnt/boot'
+`# mkdir -p /mnt/boot`
 (the -p is to make it a parent directory if it is absent, ie like creating a new folder)
 
 8) Mount the esp to the previously created directory
-'# mount /dev/sdxY /mnt/boot'
+`# mount /dev/sdxY /mnt/boot`
 
 9) Now is the actual installing bit.
-'# pacstrap -i /mnt base base-devel'
+`# pacstrap -i /mnt base base-devel`
 (base devel is required for AUR support and stuff)
 
 10)Now, an 'fstab' file has to be generated, which lists the partitions used by the OS.
-'# genfstab -U /mnt >> /mnt/etc/fstab'
+`# genfstab -U /mnt >> /mnt/etc/fstab`
 (-U is for UUIDs, -L can also be used for Labels instead)
 
 11)chroot into the Arch install.
