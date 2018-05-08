@@ -3,7 +3,17 @@ This is just a list of instructions, not an executable file. Please don't downlo
 
 ## Before installation
 
-1) Power on and boot into the live installer.
+1) Power on and boot into the live installer - boot options varies depending on the manufacturer. 
+** This guide was written with UEFI bootloader in mind, BIOS version will be up next.*
+
+Verify whether internet works if connected to Ethernet. Remember, Arch is installed using packages downloaded from the internet *at the time* of install.
+Command:
+`# ping c -3 google.com`
+
+If connected to the internet, your output should be something like this:
+
+
+
 
 2) Check your disk partitioning using `fdisk -l` and note down the partition numbers of the root and EFI partitions.
 
